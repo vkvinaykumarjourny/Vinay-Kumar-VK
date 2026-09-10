@@ -599,20 +599,88 @@ footer{
   color:var(--icon);
   cursor:pointer;
   font-size:22px;
-}
-
- .pdf-viewer{
+} .pdf-viewer{
   width:100%;
   height:calc(100% - 55px);
   background:#e9edf0;
 }
-body.dark .pdf-viewer{
-  background:#202832;
-}
-.pdf-viewer object{
-  width:100%;
+body.dark .pdf-viewer{background:#202832;}
+ 
+.cv-preview-content{
   height:100%;
-  border:0;
+  overflow-y:auto;
+  padding:35px;
+  background:var(--surface);
+  color:var(--text);
+}
+.cv-preview-header{
+  text-align:center;
+  padding-bottom:25px;
+  border-bottom:1px solid var(--border);
+}
+.cv-preview-header h1{
+  font-family:"Manrope",sans-serif;
+  font-size:30px;
+  letter-spacing:-1px;
+  margin-bottom:5px;
+}
+.cv-preview-header p{
+  color:var(--accent-dark);
+  font-weight:700;
+  margin-bottom:14px;
+}
+.cv-contact{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  color:var(--muted);
+  font-size:12px;
+}
+.cv-preview-section{
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+}
+.cv-preview-section:last-child{border-bottom:0}
+.cv-preview-section h2{
+  font-family:"Manrope",sans-serif;
+  font-size:17px;
+  margin-bottom:10px;
+  color:var(--accent-dark);
+}
+.cv-preview-section p{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.7;
+}
+.cv-item{margin-bottom:15px}
+.cv-item:last-child{margin-bottom:0}
+.cv-item h3{
+  font-family:"Manrope",sans-serif;
+  font-size:14px;
+  margin-bottom:3px;
+}
+.cv-skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+.cv-skills span{
+  padding:6px 9px;
+  border:1px solid var(--border);
+  border-radius:7px;
+  background:var(--surface-alt);
+  font-size:11px;
+  font-weight:600;
+}
+.cv-preview-section a{
+  color:var(--accent-dark);
+  font-weight:600;
+}
+@media(max-width:500px){
+  .cv-preview-content{padding:22px 18px}
+  .cv-preview-header h1{font-size:24px}
+  .cv-contact{flex-direction:column;gap:5px}
 }
 .pdf-fallback{
   height:100%;
@@ -1025,17 +1093,79 @@ body.dark .pdf-viewer{
       </button>
     </div>
     <div class="pdf-viewer">
-      <object data="pdf/Vinay_Kumar_CV.pdf"
-              type="application/pdf"
-              aria-label="CV PDF preview">
-        <div class="pdf-fallback">
-          <i class="fa-solid fa-file-pdf"></i>
-        
-          <a href="pdf/Vinay_Kumar_CV.pdf" target="_blank" rel="noopener" class="btn btn-primary">
-            Open CV
-          </a>
+      <div class="cv-preview-content">
+
+        <div class="cv-preview-header">
+          <h1>VINAY KUMAR VK</h1>
+          <p>Developer · Freelancer · Builder</p>
+          <div class="cv-contact">
+            <span>📍 Mandya, India</span>
+            <span>📞 +91 84314 52355</span>
+            <span>✉️ vianykumarvkvini@gmail.com</span>
+          </div>
         </div>
-      </object>
+
+        <div class="cv-preview-section">
+          <h2>Professional Summary</h2>
+          <p>Passionate developer focused on creating clean, responsive and user-friendly websites and applications. Interested in turning ideas into practical digital products and developing modern technology solutions.</p>
+        </div>
+
+        <div class="cv-preview-section">
+          <h2>Education</h2>
+          <div class="cv-item">
+            <h3>Master of Computer Applications (MCA)</h3>
+            <p>Upcoming · December 2026</p>
+          </div>
+          <div class="cv-item">
+            <h3>Bachelor of Computer Applications (BCA)</h3>
+            <p>Mandya University, Main Campus · 2023 – 2026</p>
+            <p>Academic Performance: 8.9 CGPA</p>
+          </div>
+        </div>
+
+        <div class="cv-preview-section">
+          <h2>Technical Skills</h2>
+          <div class="cv-skills">
+            <span>Java</span><span>Python</span><span>PHP</span><span>JavaScript</span>
+            <span>HTML5</span><span>CSS3</span><span>SQL</span><span>Git</span>
+            <span>GitHub</span><span>VS Code</span><span>Android Studio</span>
+            <span>Netlify</span><span>Cloudflare</span><span>Firebase</span>
+            <span>DSA</span><span>OOP</span><span>Web Architecture</span>
+          </div>
+        </div>
+
+        <div class="cv-preview-section">
+          <h2>Projects</h2>
+          <div class="cv-item">
+            <h3>KA Adventure</h3>
+            <p>Karnataka tourism platform for discovering destinations and travel information.</p>
+          </div>
+          <div class="cv-item">
+            <h3>Surya Tech World</h3>
+            <p>Website project for a mobile repairing shop in Mysore.</p>
+          </div>
+          <div class="cv-item">
+            <h3>Build_nova</h3>
+            <p>Freelancing agency platform for digital development and technology services.</p>
+          </div>
+        </div>
+
+        <div class="cv-preview-section">
+          <h2>Professional Skills</h2>
+          <p>Web Development · Application Development · UI Development · Deployment · Database Development · Technology Projects</p>
+        </div>
+
+        <div class="cv-preview-section">
+          <h2>Online Profiles</h2>
+          <p>GitHub:
+            <a href="https://github.com/vkvinaykumarjourny" target="_blank" rel="noopener">github.com/vkvinaykumarjourny</a>
+          </p>
+          <p>LinkedIn:
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn Profile</a>
+          </p>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
